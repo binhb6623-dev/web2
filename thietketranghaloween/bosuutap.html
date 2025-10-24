@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Sưu Tập Ảnh Ma Quái</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'halloween-orange': '#ff7518',
+                        'halloween-dark': '#1a1a1a',
+                        'halloween-light': '#f3f4f6', 
+                    },
+                    fontFamily: {
+                        'spooky': ['Creepster', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                     backgroundImage: {
+                        'bg-hero': 'url(z7141196364186_e7e56b1a3a4622827ec981fe3108cd5b.jpg)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;700&display=swap');
+
+        html, body { height: 100%; margin: 0; }
+
+        .khung {
+            min-height: 100vh;
+            background-image: var(--tw-bg-bg-gallery);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 4px solid #ff7518;
+            box-shadow: 0 0 15px rgba(255, 117, 24, 0.6);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 117, 24, 0.9);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        body{
+            background-color: black;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="khung" id="trang-bosuutap">
+    <header class="w-full bg-halloween-dark/90 text-white shadow-lg z-20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-spooky text-halloween-orange">
+                Halloween Party
+            </h1>
+            <div class="flex space-x-4">
+                <a href="/halloween.html" class="p-2 hover:text-halloween-orange transition duration-200">Trang Chủ</a>
+                <a href="/lichsu.html" class="p-2 hover:text-halloween-orange transition duration-200">Lịch Sử</a>
+                
+                <div class="relative menu-muc">
+                    <a href="/gianhang.html" class="p-2 hover:text-halloween-orange focus:outline-none">
+                        Gian Hàng 🔽
+                    </a>
+                    <div class="menu-noi-dung absolute right-0 mt-2 w-48 bg-halloween-dark rounded-md shadow-lg py-1 z-30">
+                        <a href="/gianhang.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">Sản Phẩm Ẩm Thực</a>
+                    </div>
+                </div>
+
+                <a href="/bosuutap.html" class="p-2 hover:text-halloween-orange transition duration-200">Bộ Sưu Tập Ảnh</a>
+                <a href="/lienhe.html" class="p-2 hover:text-halloween-orange transition duration-200">Liên Hệ</a>
+                <a href="#" class="p-2 bg-halloween-orange text-halloween-dark font-bold rounded-full px-4 hover:bg-orange-400 transition duration-200">Đăng Ký</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-start justify-center p-8">
+        <div class="w-full max-w-7xl bg-black/70 p-10 rounded-xl shadow-2xl backdrop-blur-sm">
+            <h2 class="text-6xl font-spooky text-purple-400 mb-10 text-center animate-pulse">
+                📸 KHO ẢNH KINH HOÀNG 💀
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/wp1824039.jpg" alt="Bí Ngô Khắc Kinh Dị" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Bí Ngô Ma Quái</p>
+                        <p class="text-sm">Jack-o'-lantern đáng sợ</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/OIP.webp" alt="Trang Phục Phù Thủy" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Phù Thủy Ác</p>
+                        <p class="text-sm">Cây chổi và nồi thuốc độc</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/1000_F_537667035_fIsHxQCxynJ8EwbUZrDuOofFOWtqqzKy.jpg" alt="Ngôi Nhà Ma Ám" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Dinh Thự Rùng Rợn</p>
+                        <p class="text-sm">Nơi trú ngụ của bóng đêm</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/hinh-anh-halloween-30-1634954869254-1634954871389782553096.jpg" alt="Kẹo và Nhện Halloween" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Kẹo Dành cho Ma</p>
+                        <p class="text-sm">Món ăn vặt kinh dị</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/1000_F_537667035_fIsHxQCxynJ8EwbUZrDuOofFOWtqqzKy.jpg" alt="Bộ Xương Di Động" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Quái Vật Xương</p>
+                        <p class="text-sm">Bóng đêm đã thức giấc</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/R.jpg" alt="Ma Cà Rồng" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Bá Tước Dracula</p>
+                        <p class="text-sm">Kẻ hút máu bí ẩn</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/OIP (1).webp" alt="Mạng Nhện Lớn" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Mạng Nhện Khổng Lồ</p>
+                        <p class="text-sm">Bẫy của Lão Nhện</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg aspect-square">
+                    <img src="/img/OIP (3).webp" alt="Cô Dâu Ma" class="rounded-lg">
+                    <div class="gallery-caption rounded-b-lg">
+                        <p class="font-bold text-xl">Cô Dâu Bóng Đêm</p>
+                        <p class="text-sm">Tình yêu vĩnh cửu</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-halloween-dark/90 text-gray-400 text-center p-4 text-sm z-20">
+        &copy; 2025 Lễ Hội Halloween - Bài Tập Thiết Kế Web. Yêu cầu: Sử dụng HTML5, CSS3, JQuery.
+    </footer>
+</body>
+</html>

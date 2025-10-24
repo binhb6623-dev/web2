@@ -1,0 +1,126 @@
+
+.classic-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.classic-table th, 
+.classic-table td {
+    border: 1px solid #ddd; 
+    padding: 12px 15px;
+}
+
+.classic-table thead tr {
+    background-color: #f2f2f2; 
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.classic-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+.long-term-table td:nth-child(2) {
+    font-weight: bold;
+    color: #333;
+}
+
+.classic-list {
+    list-style-type: none; 
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.classic-list li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    font-style: italic;
+}
+
+.classic-list li:before {
+    content: "•"; 
+    color: #333; 
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+section h2 {
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+body {
+    min-height: 100vh; 
+    background-image: url('/images/wp9259176.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+.container {
+    width: 90%;
+    max-width: 600px; 
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95); 
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px); 
+}
+.navbar {
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5); 
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff; 
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-weight: normal;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff; 
+    border-bottom: 2px solid #fff; 
+}

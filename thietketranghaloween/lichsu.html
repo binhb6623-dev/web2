@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Lễ Hội Halloween</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'halloween-orange': '#ff7518',
+                        'halloween-dark': '#1a1a1a',
+                        'halloween-light': '#f3f4f6', 
+                    },
+                    fontFamily: {
+                        'spooky': ['Creepster', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'bg-hero': 'url(z7141196364186_e7e56b1a3a4622827ec981fe3108cd5b.jpg)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'slow-move': 'slow-move 10s linear infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        'slow-move': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(50px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;700&display=swap');
+
+        html, body { height: 100%; margin: 0; }
+
+        .khung {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dieu-khien {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 50;
+        }
+
+        .vat-the {
+            position: absolute;
+            bottom: -50px; 
+            animation: rise 15s linear infinite;
+            opacity: 0.5;
+            font-size: 3rem;
+            color: white;
+            pointer-events: none; 
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-120vh); opacity: 0; }
+        }
+
+        .menu-noi-dung {
+            display: none;
+        }
+
+        .menu-muc:hover .menu-noi-dung,
+        .menu-muc:focus-within .menu-noi-dung {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body class="khung bg-bg-1" id="trang-goc">
+    <div class="dieu-khien flex space-x-2 p-2 bg-halloween-dark/80 rounded-lg shadow-xl">
+        <button id="nut-nen" class="px-4 py-2 bg-halloween-orange hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-md">
+            Đổi Nền 🎃
+        </button>
+        <button id="nut-nhac" class="px-4 py-2 bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-lg transition duration-300 shadow-md">
+            Phát Nhạc 🎵
+        </button>
+    </div>
+
+    <header class="w-full bg-halloween-dark/90 text-white shadow-lg z-20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-spooky text-halloween-orange">
+                Halloween Party
+            </h1>
+            <div class="flex space-x-4">
+                <a href="/halloween.html" class="p-2 hover:text-halloween-orange transition duration-200">Trang Chủ</a>
+                <a href="#" class="p-2 text-halloween-orange border-b-2 border-halloween-orange">Lịch Sử</a>
+                
+                <div class="relative menu-muc">
+                    <button class="p-2 hover:text-halloween-orange transition duration-200 focus:outline-none">
+                        Gian Hàng 🔽
+                    </button>
+                    <div class="menu-noi-dung absolute right-0 mt-2 w-48 bg-halloween-dark rounded-md shadow-lg py-1 z-30">
+                        <a href="/gianhang.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">Sản Phẩm Ẩm Thực</a>
+                       
+                    </div>
+                </div>
+
+                <a href="/bosuutap.html" class="p-2 hover:text-halloween-orange transition duration-200">Bộ Sưu Tập Ảnh</a>
+                <a href="/lienhe.html" class="p-2 hover:text-halloween-orange transition duration-200">Liên Hệ</a>
+                <a href="#" class="p-2 bg-halloween-orange text-halloween-dark font-bold rounded-full px-4 hover:bg-orange-400 transition duration-200">Đăng Ký</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-4xl bg-black/70 p-10 rounded-xl shadow-2xl backdrop-blur-sm">
+            <h2 class="text-6xl font-spooky text-halloween-orange mb-6 text-center">
+                NGUỒN GỐC HALLOWEEN
+            </h2>
+            <div class="text-lg text-halloween-light space-y-6">
+                <p>
+                    Halloween là lễ hội cổ xưa có nguồn gốc từ lễ hội **Samhain** của người Celtic cách đây hơn 2.000 năm tại khu vực nay là Ireland, Vương quốc Anh và miền bắc nước Pháp.
+                </p>
+                <p>
+                    Người Celtic tin rằng vào đêm trước năm mới, ranh giới giữa thế giới người sống và người chết bị xóa nhòa. Lễ hội Samhain được tổ chức vào ngày 31 tháng 10, đánh dấu sự kết thúc của mùa hè và vụ thu hoạch, đồng thời là khởi đầu của mùa đông tăm tối.
+                </p>
+                <p>
+                    Vào đêm này, người ta tin rằng linh hồn người chết quay trở lại nhà cũ. Để xua đuổi những linh hồn ác và làm hài lòng các linh hồn tốt, người dân thường đốt lửa trại, hóa trang bằng trang phục ma quái (thường là da động vật) và đi xin thức ăn.
+                </p>
+                <p>
+                    Truyền thống **Trick-or-Treat** (Cho kẹo hay bị ghẹo) và việc khoét **bí ngô Jack-o'-lantern** (được mô phỏng từ củ cải khoét rỗng của Ireland) đã phát triển mạnh mẽ khi lễ hội du nhập vào Bắc Mỹ vào thế kỷ 19, chủ yếu thông qua làn sóng người nhập cư Ireland và Scotland.
+                </p>
+                <p class="text-center italic text-gray-400 pt-4">
+                    Ngày nay, Halloween đã trở thành một lễ hội văn hóa với các hoạt động vui chơi như hóa trang, đi xin kẹo và tiệc tùng.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-halloween-dark/90 text-gray-400 text-center p-4 text-sm z-20">
+        &copy; 2025 Lễ Hội Halloween - Bài Tập Thiết Kế Web. Yêu cầu: Sử dụng HTML5, CSS3, JQuery.
+    </footer>
+
+    <span class="vat-the" style="left: 10%; animation-duration: 12s;">👻</span>
+    <span class="vat-the" style="left: 30%; animation-duration: 17s; font-size: 2rem;">💀</span>
+    <span class="vat-the" style="left: 60%; animation-duration: 10s;">🎃</span>
+    <span class="vat-the" style="left: 80%; animation-duration: 15s; font-size: 2.5rem;">🦇</span>
+
+    <audio id="nhac" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phần tử audio.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainPage = document.getElementById('trang-goc');
+            const changeBgBtn = document.getElementById('nut-nen');
+            const toggleMusicBtn = document.getElementById('nut-nhac');
+            const musicPlayer = document.getElementById('nhac');
+            
+            const backgroundClasses = ['bg-bg-1', 'bg-bg-2', 'bg-bg-3', 'bg-bg-4'];
+            let currentBgIndex = 0;
+            let isMusicPlaying = false;
+
+            changeBgBtn.addEventListener('click', () => {
+                mainPage.classList.remove(backgroundClasses[currentBgIndex]);
+                currentBgIndex = (currentBgIndex + 1) % backgroundClasses.length;
+                mainPage.classList.add(backgroundClasses[currentBgIndex]);
+            });
+
+            toggleMusicBtn.addEventListener('click', () => {
+                if (isMusicPlaying) {
+                    musicPlayer.pause();
+                    toggleMusicBtn.textContent = 'Phát Nhạc 🎵';
+                } else {
+                    musicPlayer.play().catch(error => {
+                        console.error("Lỗi khi phát nhạc: Trình duyệt có thể đã chặn autoplay.", error);
+                        toggleMusicBtn.textContent = 'Lỗi Phát Nhạc!';
+                        setTimeout(() => toggleMusicBtn.textContent = 'Phát Nhạc 🎵', 3000);
+                    });
+                    toggleMusicBtn.textContent = 'Ngừng Nhạc 🔇';
+                }
+                isMusicPlaying = !isMusicPlaying;
+            });
+
+            const pumpkin = document.createElement('span');
+            pumpkin.textContent = '🎃';
+            pumpkin.className = 'absolute bottom-10 left-10 text-6xl animate-slow-move z-10 hidden md:block';
+            mainPage.appendChild(pumpkin);
+        });
+    </script>
+</body>
+</html>

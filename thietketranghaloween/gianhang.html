@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gian Hàng Halloween Ma Quái</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'halloween-orange': '#ff7518',
+                        'halloween-dark': '#1a1a1a',
+                        'halloween-light': '#f3f4f6', 
+                    },
+                    fontFamily: {
+                        'spooky': ['Creepster', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                       
+                        'bg-hero': 'url(z7141196364186_e7e56b1a3a4622827ec981fe3108cd5b.jpg)',
+
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'slow-move': 'slow-move 10s linear infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        'slow-move': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(50px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;700&display=swap');
+
+        html, body { height: 100%; margin: 0; }
+
+        .khung {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dieu-khien {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 50;
+        }
+
+        .vat-the {
+            position: absolute;
+            bottom: -50px; 
+            animation: rise 15s linear infinite;
+            opacity: 0.5;
+            font-size: 3rem;
+            color: white;
+            pointer-events: none; 
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-120vh); opacity: 0; }
+        }
+
+        .menu-noi-dung {
+            display: none;
+        }
+
+        .menu-muc:hover .menu-noi-dung,
+        .menu-muc:focus-within .menu-noi-dung {
+            display: block;
+        }
+        body{
+            background-color: black;
+        }
+
+    </style>
+</head>
+
+<body class="khung bg-bg-1" id="trang-goc">
+
+
+    <header class="w-full bg-halloween-dark/90 text-white shadow-lg z-20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-spooky text-halloween-orange">
+                Halloween Party
+            </h1>
+            <div class="flex space-x-4">
+                <a href="/halloween.html" class="p-2 hover:text-halloween-orange transition duration-200">Trang Chủ</a>
+                <a href="/lichsu.html" class="p-2 hover:text-halloween-orange transition duration-200">Lịch Sử</a>
+                
+                <div class="relative menu-muc">
+                    <a href="#" class="p-2 text-halloween-orange border-b-2 border-halloween-orange focus:outline-none">
+                        Gian Hàng 🔽
+                    </a>
+                    <div class="menu-noi-dung absolute right-0 mt-2 w-48 bg-halloween-dark rounded-md shadow-lg py-1 z-30">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">Sản Phẩm Ẩm Thực</a>
+                    </div>
+                </div>
+
+                <a href="/bosuutap.html" class="p-2 hover:text-halloween-orange transition duration-200">Bộ Sưu Tập Ảnh</a>
+                <a href="/lienhe.html" class="p-2 hover:text-halloween-orange transition duration-200">Liên Hệ</a>
+                <a href="#" class="p-2 bg-halloween-orange text-halloween-dark font-bold rounded-full px-4 hover:bg-orange-400 transition duration-200">Đăng Ký</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-start justify-center p-4">
+        <div class="w-full max-w-6xl bg-black/70 p-10 rounded-xl shadow-2xl backdrop-blur-sm">
+            <h2 class="text-6xl font-spooky text-halloween-orange mb-10 text-center">
+                🎃 GIAN HÀNG MA QUÁI 🎃
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-halloween-dark/80 p-6 rounded-xl border-2 border-halloween-orange/50 transition duration-300 hover:border-halloween-orange hover:shadow-lg">
+                    <img 
+                        src="/img/OIP (4).webp" 
+                        alt="Kẹo Bí Ngô Phát Sáng Halloween" 
+                        class="w-full h-48 object-cover rounded-lg mb-4 transform hover:scale-105 transition duration-300"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x300/ff7518/1a1a1a?text=KEO+HALLOWEEN';"
+                    >
+                    <h3 class="text-3xl font-spooky text-pink-400 mb-2">KẸO HALLOWEEN</h3>
+                    <p class="text-gray-300 mb-4">Tuyển tập các loại kẹo hình ma, bí ngô, dơi. Hoàn hảo cho Trick-or-Treat!</p>
+                    <p class="text-2xl font-bold text-halloween-orange">50.000 VNĐ / Gói</p>
+                    <button class="mt-4 w-full py-2 bg-halloween-orange text-halloween-dark font-bold rounded-full hover:bg-orange-400 transition duration-300">
+                        Thêm vào giỏ 🛒
+                    </button>
+                </div>
+
+                <div class="bg-halloween-dark/80 p-6 rounded-xl border-2 border-halloween-orange/50 transition duration-300 hover:border-halloween-orange hover:shadow-lg">
+                    <img src="/img/OIP (5).webp" alt="Mặt Nạ Kinh Dị" class="w-full h-48 object-cover rounded-lg mb-4 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-spooky text-red-500 mb-2">MẶT NẠ KINH DỊ</h3>
+                    <p class="text-gray-300 mb-4">Các loại mặt nạ Quỷ, Ma Cà Rồng, Thần Chết. Đảm bảo gieo rắc nỗi sợ hãi!</p>
+                    <p class="text-2xl font-bold text-halloween-orange">150.000 VNĐ / Cái</p>
+                    <button class="mt-4 w-full py-2 bg-halloween-orange text-halloween-dark font-bold rounded-full hover:bg-orange-400 transition duration-300">
+                        Thêm vào giỏ 🛒
+                    </button>
+                </div>
+
+                <div class="bg-halloween-dark/80 p-6 rounded-xl border-2 border-halloween-orange/50 transition duration-300 hover:border-halloween-orange hover:shadow-lg">
+                    <img src="/img/il_794xN.4243470076_tt3o.webp" alt="Đồ Hóa Trang" class="w-full h-48 object-cover rounded-lg mb-4 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-spooky text-green-400 mb-2">ĐỒ HÓA TRANG</h3>
+                    <p class="text-gray-300 mb-4">Trang phục phù thủy, zombie và nhiều mẫu khác. Sẵn sàng cho đêm tiệc ma quái!</p>
+                    <p class="text-2xl font-bold text-halloween-orange">499.000 VNĐ / Bộ</p>
+                    <button class="mt-4 w-full py-2 bg-halloween-orange text-halloween-dark font-bold rounded-full hover:bg-orange-400 transition duration-300">
+                        Thêm vào giỏ 🛒
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full bg-halloween-dark/90 text-gray-400 text-center p-4 text-sm z-20">
+        &copy; 2025 Lễ Hội Halloween - Bài Tập Thiết Kế Web. Yêu cầu: Sử dụng HTML5, CSS3, JQuery.
+    </footer>
+
+    <span class="vat-the" style="left: 10%; animation-duration: 12s;">👻</span>
+    <span class="vat-the" style="left: 30%; animation-duration: 17s; font-size: 2rem;">💀</span>
+    <span class="vat-the" style="left: 60%; animation-duration: 10s;">🎃</span>
+    <span class="vat-the" style="left: 80%; animation-duration: 15s; font-size: 2.5rem;">🦇</span>
+
+    <audio id="nhac" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phần tử audio.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainPage = document.getElementById('trang-goc');
+            const changeBgBtn = document.getElementById('nut-nen');
+            const toggleMusicBtn = document.getElementById('nut-nhac');
+            const musicPlayer = document.getElementById('nhac');
+            
+            const backgroundClasses = ['bg-bg-1', 'bg-bg-2', 'bg-bg-3', 'bg-bg-4'];
+            let currentBgIndex = 0;
+            let isMusicPlaying = false;
+
+            changeBgBtn.addEventListener('click', () => {
+                mainPage.classList.remove(backgroundClasses[currentBgIndex]);
+                currentBgIndex = (currentBgIndex + 1) % backgroundClasses.length;
+                mainPage.classList.add(backgroundClasses[currentBgIndex]);
+            });
+
+            toggleMusicBtn.addEventListener('click', () => {
+                if (isMusicPlaying) {
+                    musicPlayer.pause();
+                    toggleMusicBtn.textContent = 'Phát Nhạc 🎵';
+                } else {
+                    musicPlayer.play().catch(error => {
+                        console.error("Lỗi khi phát nhạc: Trình duyệt có thể đã chặn autoplay.", error);
+                        toggleMusicBtn.textContent = 'Lỗi Phát Nhạc!';
+                        setTimeout(() => toggleMusicBtn.textContent = 'Phát Nhạc 🎵', 3000);
+                    });
+                    toggleMusicBtn.textContent = 'Ngừng Nhạc 🔇';
+                }
+                isMusicPlaying = !isMusicPlaying;
+            });
+
+            const pumpkin = document.createElement('span');
+            pumpkin.textContent = '🎃';
+            pumpkin.className = 'absolute bottom-10 left-10 text-6xl animate-slow-move z-10 hidden md:block';
+            mainPage.appendChild(pumpkin);
+        });
+    </script>
+</body>
+</html>

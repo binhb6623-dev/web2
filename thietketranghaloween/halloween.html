@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ Lễ Hội Ma Quái</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'halloween-orange': '#ff7518',
+                        'halloween-dark': '#1a1a1a',
+                        'halloween-light': '#f3f4f6', 
+                    },
+                    fontFamily: {
+                        'spooky': ['Creepster', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'bg-hero': 'url(z7141196364186_e7e56b1a3a4622827ec981fe3108cd5b.jpg)',
+                    },
+                    boxShadow: {
+                        'spooky-glow-purple': '0 0 30px rgba(128, 0, 128, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;700&display=swap');
+
+        html, body { height: 100%; margin: 0; }
+
+        .khung {
+            min-height: 100vh;
+            background-image: var(--tw-bg-bg-hero);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+
+        .menu-noi-dung {
+            display: none;
+        }
+
+        .menu-muc:hover .menu-noi-dung,
+        .menu-muc:focus-within .menu-noi-dung {
+            display: block;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body class="khung" id="trang-chu">
+    <header class="w-full bg-halloween-dark/90 text-white shadow-lg z-20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-spooky text-halloween-orange">
+                Halloween Party
+            </h1>
+            <div class="flex space-x-4">
+                <a href="#" class="p-2 text-halloween-orange border-b-2 border-halloween-orange transition duration-200">Trang Chủ</a>
+                <a href="/lichsu.html" class="p-2 hover:text-halloween-orange transition duration-200">Lịch Sử</a>
+                
+                <div class="relative menu-muc">
+                    <a href="gianhang.html" class="p-2 hover:text-halloween-orange focus:outline-none">
+                        Gian Hàng 🔽
+                    </a>
+                    <div class="menu-noi-dung absolute right-0 mt-2 w-48 bg-halloween-dark rounded-md shadow-lg py-1 z-30">
+                        <a href="/gianhang.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">Sản Phẩm Ẩm Thực</a>                    </div>
+                </div>
+
+                <a href="/bosuutap.html" class="p-2 hover:text-halloween-orange transition duration-200">Bộ Sưu Tập Ảnh</a>
+                <a href="/lienhe.html" class="p-2 hover:text-halloween-orange transition duration-200">Liên Hệ</a>
+                <a href="lienhe.html" class="p-2 bg-halloween-orange text-halloween-dark font-bold rounded-full px-4 hover:bg-orange-400 transition duration-200">Đăng Ký</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-8 hero-overlay">
+        <div class="text-center p-10 max-w-3xl bg-black/50 rounded-xl shadow-spooky-glow-purple backdrop-blur-sm">
+            <h2 class="text-7xl font-spooky text-halloween-orange mb-4 animate-pulse">
+                Đêm Hội Ma Quái
+            </h2>
+            <h3 class="text-3xl font-bold text-purple-400 mb-8">
+                Halloween Party Lớn Nhất Năm Đã Trở Lại!
+            </h3>
+            <p class="text-xl text-gray-200 mb-10">
+                Hãy chuẩn bị tinh thần bước vào thế giới kinh dị và huyền bí. Khám phá gian hàng ẩm thực độc đáo, chiêm ngưỡng bộ sưu tập ảnh rùng rợn và đăng ký tham gia ngay để không bỏ lỡ đêm hội đáng sợ này.
+            </p>
+            <a href="gianhang.html" class="inline-block py-3 px-8 bg-halloween-orange text-halloween-dark font-bold text-xl rounded-full shadow-lg hover:bg-orange-400 transition duration-300 transform hover:scale-105">
+                Khám Phá Gian Hàng 👻
+            </a>
+        </div>
+    </main>
+
+    <footer class="w-full bg-halloween-dark/90 text-gray-400 text-center p-4 text-sm z-20">
+        &copy; 2025 Lễ Hội Halloween - Bài Tập Thiết Kế Web. Yêu cầu: Sử dụng HTML5, CSS3, JQuery.
+    </footer>
+</body>
+</html>

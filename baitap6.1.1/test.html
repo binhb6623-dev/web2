@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ cá vui nhộn</title>
+    <link rel="stylesheet" href="testcss.css">
+</head>
+<body class="bg-1">
+    
+    <audio id="background-music" autoplay loop>
+        <source src="images/trình-prod-by-kewtiie.mp3" type="audio/mpeg"/>
+    </audio>
+
+    <div id="controls">
+        <button id="toggleMusic">DỪNG NHẠC</button>
+        <button id="changeBackground">ĐỔI NỀN</button>
+        <button id="togglePause">TẠM DỪNG</button>
+        <button id="increaseSpeed">TĂNG TỐC</button>
+        <button id="decreaseSpeed">GIẢM TỐC</button>
+    </div>
+
+    <div id="content">
+        <div id="shark"><img src="images/shark.png" width="auto" height="auto"></div>
+    </div>
+    <div id="content">
+        <div id="human1"><img src="images/diver1.png" width="auto" height="auto"></div>
+    </div>
+    <div id="content">
+        <div id="human2"><img src="images/diver2.png" width="auto" height="auto"></div>
+    </div>
+    <div id="content">
+        <div id="human3"><img src="images/diver3.png" width="auto" height="auto"></div>
+    </div>
+    <div id="content">
+        <div id="turtle"><img src="images/turtle.png" width="auto" height="auto"></div>
+    </div>
+    <div id="content">
+        <div id="fish"><img src="images/goldFishSchool.png" width="auto" height="auto"></div>
+    </div>
+    <div id="content">
+        <div id="ca"><img src="images/faintSchool.png" width="auto" height="auto"></div>
+    </div>
+
+    <script>
+        const animatedElements = document.querySelectorAll('#shark, #human1, #human2, #human3, #turtle, #fish, #ca');
+        const defaultDurations = {
+            'shark': 10, 'human1': 20, 'human2': 15, 'human3': 20,
+            'turtle': 40, 'fish': 25, 'ca': 20
+        };
+        const currentDurations = {...defaultDurations};
+        let animationRunning = true;
+        
+        
+        function toggleAllAnimations() {
+            animationRunning = !animationRunning;
+            const state = animationRunning ? 'running' : 'paused';
+            document.getElementById('togglePause').textContent = animationRunning ? '⏸️ Tạm dừng' : '▶️ Tiếp tục';
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = state;
+            });
+        }
+
+        function changeSpeed(delta) {
+            animatedElements.forEach(el => {
+                const id = el.id;
+                let duration = currentDurations[id] || defaultDurations[id];
+                
+                
+                let newDuration = Math.min(100, Math.max(1, duration + delta));
+                currentDurations[id] = newDuration;
+                el.style.animationDuration = newDuration + 's';
+            });
+            
+            
+            if (!animationRunning) {
+                toggleAllAnimations(); 
+            }
+        }
+        
+       
+
+        const bodyElement = document.body;
+        const backgroundClasses = ['bg-1', 'bg-2', 'bg-3', 'bg-4']; 
+        let currentBackgroundIndex = 0;
+
+        function changeBackground() {
+            bodyElement.classList.remove(backgroundClasses[currentBackgroundIndex]);
+            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundClasses.length;
+            bodyElement.classList.add(backgroundClasses[currentBackgroundIndex]);
+        }
+
+        
+        
+        const musicElement = document.getElementById('background-music');
+        const toggleMusicButton = document.getElementById('toggleMusic');
+        
+        function toggleMusic() {
+            if (musicElement.paused) {
+                
+                musicElement.play().catch(error => {
+                    console.error("Autoplay bị chặn:", error);
+                    alert("Trình duyệt đã chặn tính năng tự động phát nhạc. Vui lòng thử lại.");
+                });
+            } else {
+                
+                musicElement.pause();
+            }
+        }
+        
+       
+
+        
+        document.getElementById('togglePause').addEventListener('click', toggleAllAnimations);
+        document.getElementById('increaseSpeed').addEventListener('click', () => changeSpeed(-5));
+        document.getElementById('decreaseSpeed').addEventListener('click', () => changeSpeed(5));
+        document.getElementById('changeBackground').addEventListener('click', changeBackground);
+        document.getElementById('toggleMusic').addEventListener('click', toggleMusic);
+
+        
+        musicElement.addEventListener('play', () => {
+            toggleMusicButton.textContent = 'DỪNG NHẠC';
+        });
+        musicElement.addEventListener('pause', () => {
+            toggleMusicButton.textContent = 'PHÁT NHẠC';
+        });
+        
+        
+        setTimeout(() => {
+            if (musicElement.paused) {
+                 toggleMusicButton.textContent = 'PHÁT NHẠC';
+            }
+        }, 1000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Liên Hệ Ma Quái</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'halloween-orange': '#ff7518',
+                        'halloween-dark': '#1a1a1a',
+                        'halloween-light': '#f3f4f6', 
+                    },
+                    fontFamily: {
+                        'spooky': ['Creepster', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'bg-contact': 'url(https://placehold.co/1920x1080/0d0d0d/800080?text=Eerie+Contact+Fog)',
+                    },
+                    boxShadow: {
+                        'spooky-glow': '0 0 20px rgba(255, 117, 24, 0.8), 0 0 40px rgba(128, 0, 128, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;700&display=swap');
+
+        html, body { height: 100%; margin: 0; }
+
+        .khung {
+            min-height: 100vh;
+            background-image: var(--tw-bg-bg-contact);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-noi-dung {
+            display: none;
+        }
+
+        .menu-muc:hover .menu-noi-dung,
+        .menu-muc:focus-within .menu-noi-dung {
+            display: block;
+        }
+
+        .input-style {
+            background-color: #333;
+            border: 2px solid #ff7518;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-style:focus {
+            border-color: #800080;
+            outline: none;
+            box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+        }
+        body{
+            background-color: black;
+        }
+
+    </style>
+</head>
+
+<body class="khung" id="trang-lienhe">
+    <header class="w-full bg-halloween-dark/90 text-white shadow-lg z-20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-spooky text-halloween-orange">
+                Halloween Party
+            </h1>
+            <div class="flex space-x-4">
+                <a href="/halloween.html" class="p-2 hover:text-halloween-orange transition duration-200">Trang Chủ</a>
+                <a href="/lichsu.html" class="p-2 hover:text-halloween-orange transition duration-200">Lịch Sử</a>
+                
+                <div class="relative menu-muc">
+                    <a href="gianhang.html" class="p-2 hover:text-halloween-orange focus:outline-none">
+                        Gian Hàng 🔽
+                    </a>
+                    <div class="menu-noi-dung absolute right-0 mt-2 w-48 bg-halloween-dark rounded-md shadow-lg py-1 z-30">
+                        <a href="/gianhang.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">Sản Phẩm Ẩm Thực</a>
+                    </div>
+                </div>
+
+                <a href="/bosuutap.html" class="p-2 hover:text-halloween-orange transition duration-200">Bộ Sưu Tập Ảnh</a>
+                <a href="/lienhe.html" class="p-2 text-halloween-orange border-b-2 border-halloween-orange transition duration-200">Liên Hệ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-8">
+        <div class="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8 bg-black/80 p-10 rounded-xl shadow-spooky-glow backdrop-blur-sm">
+            
+            <div class="p-4">
+                <h2 class="text-5xl font-spooky text-purple-400 mb-6 border-b-2 border-purple-400 pb-2">
+                    Cánh Cửa Mở Tới Địa Ngục
+                </h2>
+                <p class="text-gray-300 mb-6">
+                    Hãy đăng ký tham gia hoặc liên lạc với chúng tôi để hỏi về vé, các hoạt động kinh dị, hoặc gửi những lời nguyền rủa của bạn!
+                </p>
+
+                <div class="space-y-4 text-lg">
+                    <div class="flex items-start">
+                        <span class="text-halloween-orange mr-3">📞</span>
+                        <div>
+                            <p class="font-bold">Hotline Ma Quái:</p>
+                            <p class="text-gray-400">(090) XXX-YYYY</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-halloween-orange mr-3">📧</span>
+                        <div>
+                            <p class="font-bold">Hộp Thư Âm Phủ:</p>
+                            <p class="text-gray-400">halloweenparty@dianguc.vn</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-halloween-orange mr-3">📍</span>
+                        <div>
+                            <p class="font-bold">Địa Điểm Nguy Hiểm:</p>
+                            <p class="text-gray-400">Ngôi Nhà Ma Ám, Số 13, Đường Lạnh Lẽo, Khu Phố Bóng Đêm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-halloween-dark/90 rounded-xl shadow-lg border border-halloween-orange">
+                <h3 class="text-4xl font-spooky text-halloween-orange mb-6 text-center">
+                    Đăng Ký Tham Gia Lễ Hội
+                </h3>
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-1">Tên (hoặc Biệt Danh Ma Quái)</label>
+                        <input type="text" id="name" name="name" required class="input-style w-full" placeholder="Ví dụ: Thần Chết">
+                    </div>
+                    <div>
+                        <label for="age" class="block text-gray-300 mb-1">Tuổi</label>
+                        <input type="number" id="age" name="age" required class="input-style w-full" placeholder="Ví dụ: 18 (hoặc 180 nếu là ma)">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="input-style w-full" placeholder="Ví dụ: quydau@amphu.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-1">Ghi Chú/Yêu Cầu (Tùy chọn)</label>
+                        <textarea id="message" name="message" rows="2" class="input-style w-full" placeholder="Bạn muốn hóa trang thành gì?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-purple-600 text-white font-bold text-lg rounded-lg shadow-md hover:bg-purple-700 transition duration-300 transform hover:scale-[1.01] flex items-center justify-center">
+                        Đăng Ký Ngay!
+                        <span class="ml-2 text-xl">😈</span>
+                    </button>
+                    <div id="message-status" class="mt-4 text-center font-bold"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-halloween-dark/90 text-gray-400 text-center p-4 text-sm z-20">
+        &copy; 2025 Lễ Hội Halloween - Bài Tập Thiết Kế Web. Yêu cầu: Sử dụng HTML5, CSS3, JQuery.
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').on('submit', function(e) {
+                e.preventDefault();
+                const statusDiv = $('#message-status');
+                
+                statusDiv.removeClass('text-red-500 text-green-500').html('Đang gửi dữ liệu đăng ký...');
+
+                setTimeout(() => {
+                    const name = $('#name').val();
+                    const age = parseInt($('#age').val());
+                    const email = $('#email').val();
+
+                    if (!email.includes('@') || !email.includes('.')) {
+                        statusDiv.addClass('text-red-500').html('Email không hợp lệ! Hãy gửi đúng email để quỷ sứ hồi đáp.');
+                        return;
+                    }
+
+                    if (isNaN(age) || age < 5) {
+                         statusDiv.addClass('text-red-500').html('Tuổi không hợp lệ! Bạn phải trên 5 tuổi để tham gia lễ hội.');
+                        return;
+                    }
+
+                    statusDiv.addClass('text-green-500').html(`Đăng ký thành công cho ${name} (${age} tuổi)! Hãy chờ đợi thư mời ma quái qua email.`);
+                    $('#contact-form')[0].reset();
+                }, 2000); 
+            });
+        });
+    </script>
+</body>
+</html>

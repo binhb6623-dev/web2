@@ -1,0 +1,138 @@
+#shark{
+    left:100px; top:400px;
+    position:absolute;
+    animation-name: Shark;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes Shark{
+    0% {left:100px; top:400px;}
+    20% {left:300px; top:400px;}
+    40% {left:500px; top:300px;}
+    50% {left:600px; top:50px;}
+    60% {left:600px; top:100px;}
+    80% {left:500px; top:200px;}
+    100% {left:100px; top:400px; transform:scaleX(-1);}
+
+}
+#human1{
+    left:100px; top:400px;
+    position:absolute;
+    animation-name: Human1;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes Human1{
+    10% {left:200px; top:600px;}
+    20% {left:400px; top:300px;}
+    40% {left:900px; top:100px;}
+    50% {left:60px; top:250px;}
+    60% {left:500px; top:200px;}
+    80% {left:1000px; top:400px;}
+    100% {left:200px; top:500px; transform:scaleX(-1);}
+
+}
+#human2{
+    left:10px; top:200px;
+    position:absolute;
+    animation-name: Human2;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes Human2{
+    10% {left:500px; top:700px;}
+    20% {left:300px; top:400px;}
+    40% {left:500px; top:100px;}
+    50% {left:360px; top:50px;}
+    60% {left:450px; top:270px;}
+    80% {left:100px; top:3800px;}
+    100% {left:1000px; top:1500px; transform:scaleX(-1);}
+
+}
+#human3{
+    left:300px; top:100px;
+    position:absolute;
+    animation-name: Human3;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes Human3{
+    10% {left:400px; top:600px;}
+    20% {left:790px; top:300px;}
+    40% {left:900px; top:100px;}
+    50% {left:740px; top:300px;}
+    60% {left:1500px; top:600px;}
+    80% {left:700px; top:60px;}
+    100% {left:200px; top:500px; transform:scaleX(-1);}
+
+}
+#turtle{
+    left:100px; top:100px;
+    position:absolute;
+    animation-name: Turtle;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes Turtle{
+    10% {left:200px; top:200px;}
+    20% {left:290px; top:300px;}
+    40% {left:300px; top:350px;}
+    50% {left:400px; top:500px;}
+    60% {left:500px; top:600px;}
+    80% {left:700px; top:700px;}
+    100% {left:200px; top:800px; transform:scaleX(-1);}
+
+}
+
+
+#fish{
+    left:50px; top:600px;
+    position:absolute;
+    animation-name: fish;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes fish{
+    10% {left:200px; top:200px;}
+    20% {left:680px; top:400px;}
+    40% {left:500px; top:750px;}
+    50% {left:400px; top:500px;}
+    60% {left:600px; top:900px;}
+    80% {left:400px; top:300px;}
+    100% {left:500px; top:500px; transform:scaleX(-1);}
+
+}
+#ca{
+    left:10px; top:300px;
+    position:absolute;
+    animation-name: ca;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+@keyframes ca{
+    10% {left:50px; top:200px;}
+    20% {left:440px; top:680px;}
+    40% {left:550px; top:420px;}
+    50% {left:660px; top:800px;}
+    60% {left:300px; top:560px;}
+    80% {left:800px; top:670px;}
+    100% {left:700px; top:500px; transform:scaleX(-1);}
+
+}
+body{
+    background-color: rgb(68, 68, 229);
+}
